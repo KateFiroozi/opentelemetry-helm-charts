@@ -62,31 +62,24 @@ manager:
   targetAllocatorImage:
     repository: ""
     tag: ""
-  # Provide repository and tag for auto-instrumentation images to override defaults in opentelemetry-operator
-  # Make sure both repository and tag are provided, otherwise defaults will be used
+  # Provide image reference in the format `image: "repository:tag"` for auto-instrumentation images to override defaults in opentelemetry-operator.
+  # Auto-instrumentation images overrides are provided to the opentelemetry-operator via args in the deployment template.
   autoInstrumentationImage:
     java:
-      repository: ""
-      tag: ""
+      image: ""
     nodejs:
-      repository: ""
-      tag: ""
+      image: ""
     python:
-      repository: ""
-      tag: ""
+      image: ""
     dotnet:
-      repository: ""
-      tag: ""
+      image: ""
     apacheHttpd:
-      repository: ""
-      tag: ""
+      image: ""
     nginx:
-      repository: ""
-      tag: ""
+      image: ""
     # To enable Go instrumentation, manager.autoInstrumentation.go.enabled must be set to true
     go:
-      repository: ""
-      tag: ""
+      image: ""
 
   # The Go instrumentation support in the operator is disabled by default.
   autoInstrumentation:
